@@ -24,11 +24,11 @@
           <td>
             <% if @book.favorited_by?(current_user) %>
               <%= link_to book_favorites_path(@book.id), method: :delete do %>
-                <span>♥︎︎</span>
+                <span>♥︎︎<%= @book.favorites.count %></span>
               <% end %>
             <% else %>
               <%= link_to book_favorites_path(@book.id), method: :post do %>
-                <span>︎♡</span>
+                <span>︎♡<%= @book.favorites.count %></span>
               <% end %>
             <% end %>
           </td>
